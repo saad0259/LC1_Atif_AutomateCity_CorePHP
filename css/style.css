@@ -3310,7 +3310,7 @@ p.has-large-font-size {
 }
 .testimonial-inner .client-head{
 	display:inline-block;
-	float:left;
+	/* float:left; */
 }
 .testimonial-inner .t-info img {
     width: 75px;
