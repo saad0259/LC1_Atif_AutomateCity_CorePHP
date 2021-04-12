@@ -1,6 +1,15 @@
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
+:root{
+	--primary1:#2e2751;
+    --primary2:#179E66;
+    --secondary1:#f3a712;
+}
+
+
+
 html {
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -179,11 +188,11 @@ th {
 	-moz-transition: all 500ms ease;
 	transition: all 500ms ease;
 	display: block;
-	color: #1A9F68;
+	color: var(--primary2);
 	border-radius: 100%;
 }
 #scrollUp i:hover{
-	background:#1A9F68;
+	background:var(--primary2);
 	color:#fff;
 }
 .section-padding {
@@ -202,13 +211,13 @@ optgroup,
 textarea {
     font-family: 'Poppins', sans-serif;
 	font-weight:400;
-	color: #2e2751;
+	color: var(--primary1);
 	font-size: 15px;
 	line-height: 24px;
 }
 h1,h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6 a {
 	margin: 0;
-	color:#2e2751;
+	color:var(--primary1);
 	position:relative;
     font-family: 'Poppins', sans-serif;
 	font-weight:600;
@@ -306,7 +315,7 @@ big {
     position: relative;
     display: inline-block;
     text-transform: capitalize;
-    color: #2E2751;
+    color: var(--primary1);
     line-height: initial;
     line-height: 42px;
     margin-bottom: 10px;
@@ -319,7 +328,7 @@ big {
     padding: 5px 15px;
     line-height: initial;
     font-size: 13px;
-    background: #f3a712;
+    background: var(--secondary1);
     margin-bottom: 15px;
 }
 .section-title h1 span:before {
@@ -327,7 +336,7 @@ big {
     position: absolute;
     left: 50%;
     bottom: -8px;
-    border-top: 8px solid #f3a712;
+    border-top: 8px solid var(--secondary1);
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     margin-left: -8px;
@@ -393,7 +402,7 @@ big {
 	width: 100%;
 	height: 100%;
 	opacity: 0.8;
-	background: #2e2751;
+	background: var(--primary1);
 	content: "";
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
@@ -401,7 +410,7 @@ big {
 	z-index: 1;
 }
 .overlay.primary:before{
-	background:#1A9F68;
+	background:var(--primary2);
 }
 .custom-shadow{
 	box-shadow: 0px 20px 60px #00000024;
@@ -410,7 +419,7 @@ big {
 	text-align: center;
 	margin: 0;
 	padding: 13px 32px;
-	background: #1A9F68;
+	background: var(--primary2);
 	color: #fff;
 	font-size: 15px;
 	border-radius: 0px;
@@ -429,14 +438,14 @@ big {
 	padding-left:6px;
 }
 .bizwheel-btn.theme-2 {
-  background: #f3a712;
+  background: var(--secondary1);
   color: #fff;
 }
 .bizwheel-btn.radius{
 	border-radius:50px;
 }
 .bizwheel-btn:hover,.bizwheel-btn.theme-2:hover{
-	background:#2E2751;
+	background:var(--primary1);
 	color:#fff;
 	box-shadow:0 10px 10px -8px rgba(0, 0, 0, 0.5);
 }

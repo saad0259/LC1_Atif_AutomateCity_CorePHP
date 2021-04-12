@@ -28,7 +28,7 @@ blockquote,.single-portfolio .portfolio-content{
 	color: #38ADA9;
 }
 .partner-slider.owl-carousel .owl-nav div{
-	color: #38ADA9; !important;
+	color: #38ADA9 !important;
 }
 .hero-agency .a-feature:hover,.single-skill .progress .progress-bar span::before,.section-title h1 span:before{
 	border-top-color: #38ADA9;
@@ -37,7 +37,7 @@ blockquote,.single-portfolio .portfolio-content{
 	border-left-color: #38ADA9;
 }
 .hero-slider.style4 .button .techopz-btn:hover,.comment-list .bottom-title h2.comments-heading a,.single-f-news .title:hover a,.single-f-news .post-meta i,.widget ul li a:hover,.hero-agency .hero-text h1 span{
-	color: #38ADA9; !important;
+	color: #38ADA9 !important;
 }	
 .preloader-spinner,.testimonial-slider .owl-controls .owl-dot span,.team-slider .owl-controls .owl-dot span{
 	border-color: #38ADA9;

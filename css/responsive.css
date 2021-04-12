@@ -1,4 +1,14 @@
 /* Tablet Screen */
+
+:root{
+
+    --primary1:#2e2751;
+    --primary2:#179E66;
+    --secondary1:#f3a712;
+   
+}
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 body{
 	font-size:14px;
@@ -80,13 +90,13 @@ p{
 .header.style2 .middle-header{
 	top:83px;
 }
-.right-bar:after{
-}
+/* .right-bar:after{
+} */
 .right-bar ul li {
 	margin-right: 8px;
 }
 .right-bar .right-nav li a:hover{
-	color:#F3A712;
+	color:var(--secondary1);
 }
 .hero-slider .hero-text h1 {
     font-size: 35px;
@@ -180,7 +190,7 @@ p{
 }
 .single-service h4 a {
   font-size: 18px;
-  margin-bottom: ;
+  /* margin-bottom: ; */
 }
 .single-service h4 {
   margin-bottom: 5px;
@@ -189,7 +199,7 @@ p{
 	padding: 30px 15px;
 }
 .single-service h4 a {
-	color: #28243C;
+	color: var(--primary1);
 	font-size: 18px;
 }
 .single-service .icon-bg {
@@ -281,7 +291,7 @@ p{
 }
 .error-inner h4 {
 	font-size: 80px;
-	lieft: ;
+	/* lieft: ; */
 	line-height: 80px;
 }
 .error .error-inner h2{
@@ -411,7 +421,7 @@ p{
 	box-shadow:none;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background: #2E2751 !important;
+	background: var(--primary1) !important;
 }
 .skill-image{
 	display:none;
@@ -433,7 +443,7 @@ p{
 	display:none;
 }
 .slicknav_nav li a:hover{
-	color:#1A9F68;
+	color:var(--primary2);
 	background:transparent;
 }
 .slicknav_nav li:hover{
@@ -447,7 +457,7 @@ p{
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
-	color:#1A9F68;
+	color:var(--primary2);
 	background:transparent;
 }
 .slicknav_nav li .slicknav_item{
@@ -463,7 +473,7 @@ p{
 	padding-bottom:0px;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #1A9F68;
+	background-color: var(--primary2);
 	box-shadow: none;
 	text-shadow: none;
 }
@@ -495,7 +505,7 @@ p{
     margin-top: -20px;
 }
 .header.style2 .middle-inner {
-    background: #2E2751;
+    background: var(--primary1);
     z-index: 2035;
     padding: 22px 20px;
 }
@@ -587,13 +597,13 @@ p{
 	width:80%;
 	z-index: 9999;
 }
-.right-bar:after{
-}
+/* .right-bar:after{
+} */
 .right-bar ul li {
 	margin-right: 8px;
 }
 .right-bar .right-nav li a:hover{
-	color:#F3A712;
+	color:var(--secondary1);
 }
 .hero-slider .hero-text h4 {
 	font-size: 13px;
@@ -691,8 +701,8 @@ p{
   height: 70px;
   line-height: 70px;
   font-size: 25px;
-  margin: ;
-  margin-top: ;
+  /* margin: ;
+  margin-top: ; */
   top: 50%;
 }
 .img-feature .video-play {
@@ -732,7 +742,7 @@ p{
 }
 .single-service h4 a {
   font-size: 18px;
-  margin-bottom: ;
+  /* margin-bottom: ; */
 }
 .single-service h4 {
   margin-bottom: 5px;
@@ -741,7 +751,7 @@ p{
 	padding: 30px 15px;
 }
 .single-service h4 a {
-	color: #28243C;
+	color: var(--primary1);
 	font-size: 18px;
 }
 .single-service .icon-bg {
@@ -770,7 +780,7 @@ p{
 	font-size:22px;
 }
 .testimonial-inner .single-slider {
-	padding: ;
+	/* padding: ; */
 	margin: 0;
 }
 .testimonial-inner .testimonial-slider {
