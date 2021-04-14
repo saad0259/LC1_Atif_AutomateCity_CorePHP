@@ -56,7 +56,7 @@
 						<div class="col-lg-8 col-12">
 							<!-- Top Contact -->
 							<div class="top-contact">
-								<div class="single-contact"><i class="fa fa-phone"></i>Phone: +(92) 305 6558626</div> 
+								<div class="single-contact"><a href="https://web.whatsapp.com/send?phone=+923056558626&text=Hello"><i class="fa fa-whatsapp"></i>WhatsApp: +(92) 305 6558626</a></div> 
 								<div class="single-contact"><i class="fa fa-envelope-open"></i>Email: info@yoursite.com</div>	
 								<div class="single-contact"><i class="fa fa-clock-o"></i>Opening: 08AM - 09PM</div> 
 							</div>
@@ -109,7 +109,7 @@
 															<!-- Naviagiton -->
 															<ul id="nav" class="nav main-menu menu navbar-nav">
 																<li><a href="index.php">Home</a></li>
-																<li><a href="about.html">About Us</a></li>
+																<li><a href="about.php">About Us</a></li>
 																<li class="icon-active"><a href="#">Coaching</a>
 																	<ul class="sub-menu">
 																		<li><a href="blog.html">FBA Proficiency</a></li>
