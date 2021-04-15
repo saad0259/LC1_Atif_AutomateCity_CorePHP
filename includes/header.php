@@ -9,15 +9,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title Tag  -->
-		<title>Bizwheel - Multipurpose Business & Digital Agency Html5 Template</title>
+		<title>AutomateCity</title>
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/favicon.png" href="img/favicon.png">
+		<!-- <link rel="icon" type="image/favicon.png" href="img/favicon.png"> -->
 		
 		<!-- Web Font -->
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		
-		<!-- Bizwheel Plugins CSS -->
+		<!--  Plugins CSS -->
 		<link rel="stylesheet" href="css/animate.min.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/cubeportfolio.min.css">
@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="css/owl-carousel.min.css">
 		<link rel="stylesheet" href="css/slicknav.min.css">
 
-		<!-- Bizwheel Stylesheet -->  
+		<!--  Stylesheet -->  
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/responsive.css">

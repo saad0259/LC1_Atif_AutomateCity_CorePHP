@@ -41,7 +41,7 @@ include('includes/header.php');
 								<div class="welcome-text"> 
 									<div class="hero-text"> 
 										<h4>Your time is so important for us</h4>
-										<h1>Build Your WorldClass Brand with Bizwheel</h1>
+										<h1>Build Your WorldClass Brand with AutomateCity</h1>
 										<div class="p-text">
 											<p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
 										</div>
