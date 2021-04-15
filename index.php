@@ -23,8 +23,8 @@ include('includes/header.php');
 											<p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
 										</div>
 										<div class="button">
-											<a href="contact.html" class="bizwheel-btn theme-1 effect">Contact Us</a>
-											<a href="portfolio.html" class="bizwheel-btn theme-2 effect">Testimonials</a>
+											<a href="contact.php" class="bizwheel-btn theme-1 effect">Contact Us</a>
+											<a href="testimonials.php" class="bizwheel-btn theme-2 effect">Testimonials</a>
 										</div>
 									</div>
 								</div>
@@ -46,7 +46,7 @@ include('includes/header.php');
 											<p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
 										</div>
 										<div class="button">
-											<a href="blog.html" class="bizwheel-btn theme-1 effect">Read our blog</a>
+											<a href="testimonials.php" class="bizwheel-btn theme-1 effect">Read our blog</a>
 										</div>
 									</div>
 								</div>
@@ -68,7 +68,7 @@ include('includes/header.php');
 											<p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
 										</div>
 										<div class="button">
-											<a href="team.html" class="bizwheel-btn theme-2 effect">Our Leaders</a>
+											<a href="about.php" class="bizwheel-btn theme-2 effect">Our Leaders</a>
 										</div>
 									</div>
 								</div>
@@ -113,7 +113,7 @@ include('includes/header.php');
 									</div>
 									<div class="news-body">
 										<div class="news-content">
-											<h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+											<h3 class="news-title"><a href="service-single.php">We Provide you Best &amp; Creative Consulting Service</a></h3>
 											<div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
 											<ul class="news-meta">
 												<li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -133,7 +133,7 @@ include('includes/header.php');
 									</div>
 									<div class="news-body">
 										<div class="news-content">
-											<h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+											<h3 class="news-title"><a href="service-single.php">We Provide you Best &amp; Creative Consulting Service</a></h3>
 											<div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
 											<ul class="news-meta">
 												<li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -153,7 +153,7 @@ include('includes/header.php');
 									</div>
 									<div class="news-body">
 										<div class="news-content">
-											<h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+											<h3 class="news-title"><a href="service-single.php">We Provide you Best &amp; Creative Consulting Service</a></h3>
 											<div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
 											<ul class="news-meta">
 												<li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -185,7 +185,7 @@ include('includes/header.php');
 					</div>
 					<div class="col-lg-3 col-12">
 						<div class="button">
-							<a href="https://api.whatsapp.com/send/?phone=+923016903908&text&app_absent=0 " class="bizwheel-btn">Start Conversation</a>
+							<a href="https://api.whatsapp.com/send/?phone=+923056558626&text&app_absent=0" class="bizwheel-btn">Start Conversation</a>
 						</div>
 					</div>
 				</div>
@@ -208,10 +208,10 @@ include('includes/header.php');
 						<!-- Single Feature -->
 						<div class="single-feature">
 							<div class="icon-head"><i class="fa fa-podcast"></i></div>
-							<h4><a href="service-single.html">Creative Ideas</a></h4>
+							<h4><a href="service-single.php">Creative Ideas</a></h4>
 							<p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
 							<div class="button">
-								<a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+								<a href="service-single.php" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
 							</div>
 						</div>
 						<!--/ End Single Feature -->
@@ -220,10 +220,10 @@ include('includes/header.php');
 						<!-- Single Feature -->
 						<div class="single-feature">
 							<div class="icon-head"><i class="fa fa-podcast"></i></div>
-							<h4><a href="service-single.html">Quality Service</a></h4>
+							<h4><a href="service-single.php">Quality Service</a></h4>
 							<p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
 							<div class="button">
-								<a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+								<a href="service-single.php" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
 							</div>
 						</div>
 						<!--/ End Single Feature -->
@@ -232,10 +232,10 @@ include('includes/header.php');
 						<!-- Single Feature -->
 						<div class="single-feature active">
 							<div class="icon-head"><i class="fa fa-podcast"></i></div>
-							<h4><a href="service-single.html">On-time Completion</a></h4>
+							<h4><a href="service-single.php">On-time Completion</a></h4>
 							<p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
 							<div class="button">
-								<a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+								<a href="service-single.php" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
 							</div>
 						</div>
 						<!--/ End Single Feature -->
@@ -244,10 +244,10 @@ include('includes/header.php');
 						<!-- Single Feature -->
 						<div class="single-feature">
 							<div class="icon-head"><i class="fa fa-podcast"></i></div>
-							<h4><a href="service-single.html">24/7 Live support</a></h4>
+							<h4><a href="service-single.php">24/7 Live support</a></h4>
 							<p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
 							<div class="button">
-								<a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+								<a href="service-single.php" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
 							</div>
 						</div>
 						<!--/ End Single Feature -->
@@ -286,9 +286,9 @@ include('includes/header.php');
 								<div class="icon-bg"><i class="fa fa-refresh"></i></div>
 							</div>
 							<div class="service-content">
-								<h4><a href="service-business.html">Complete Automation</a></h4>
+								<h4><a href="service-single.php">Complete Automation</a></h4>
 								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-business.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+								<a class="btn" href="service-single.php"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
 							</div>
 						</div>
 						<!--/ End Single Service -->
@@ -301,9 +301,9 @@ include('includes/header.php');
 								<div class="icon-bg"><i class="fa fa-star-half-o"></i></div>
 							</div>
 							<div class="service-content">
-								<h4><a href="service-develop.html">Partial Automation</a></h4>
+								<h4><a href="service-single.php">Partial Automation</a></h4>
 								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-develop.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+								<a class="btn" href="service-single.php"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
 							</div>
 						</div>
 						<!--/ End Single Service -->
@@ -316,9 +316,9 @@ include('includes/header.php');
 								<div class="icon-bg"><i class="fa fa-amazon"></i></div>
 							</div>
 							<div class="service-content">
-								<h4><a href="service-market.html">FBA Proficiency Course</a></h4>
+								<h4><a href="service-single.php">FBA Proficiency Course</a></h4>
 								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-market.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+								<a class="btn" href="service-single.php"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
 							</div>
 						</div>
 						<!--/ End Single Service -->
@@ -331,9 +331,9 @@ include('includes/header.php');
 								<div class="icon-bg"><i class="fa fa-facebook"></i></div>
 							</div>
 							<div class="service-content">
-								<h4><a href="service-market.html">FBA Proficiency Course</a></h4>
+								<h4><a href="service-single.php">FBA Proficiency Course</a></h4>
 								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-market.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+								<a class="btn" href="service-single.php"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
 							</div>
 						</div>
 						<!--/ End Single Service -->

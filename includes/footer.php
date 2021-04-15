@@ -27,7 +27,7 @@
 										<li><a class="instagram" href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
 									</ul>
 								</div>
-								<div class="button"><a href="#" class="bizwheel-btn">About Us</a></div>
+								<div class="button"><a href="about.php" class="bizwheel-btn">About Us</a></div>
 							</div>		
 							<!--/ End Footer About -->		
 						</div>
@@ -36,11 +36,10 @@
 							<div class="single-widget f-link widget">
 								<h3 class="widget-title">Company</h3>
 								<ul>
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Our Services</a></li>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">Pricing Plan</a></li>
-									<li><a href="#">Contact us</a></li>
+									<li><a href="about.php">About Us</a></li>
+									<li><a href="service-single.php">Our Services</a></li>
+									<li><a href="testimonials.php">Portfolio</a></li>
+									<li><a href="contact.php">Contact us</a></li>
 								</ul>
 							</div>			
 							<!--/ End Footer Links -->			
@@ -54,7 +53,7 @@
 									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
 									<div class="content">
 										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 15, 2020</time></p>
-										<h4 class="title"><a href="blog-sngle.html">They Provide you Best Creative Consulting Service</a></h4>
+										<h4 class="title"><a href="service-single.php">They Provide you Best Creative Consulting Service</a></h4>
 									</div>
 								</div>
 								<!--/ End Single News -->
@@ -63,7 +62,7 @@
 									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
 									<div class="content">
 										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 10, 2020</time></p>
-										<h4 class="title"><a href="blog-sngle.html">They Provide you Best Creative Consulting Service</a></h4>
+										<h4 class="title"><a href="service-single.php">They Provide you Best Creative Consulting Service</a></h4>
 									</div>
 								</div>
 								<!--/ End Single News -->

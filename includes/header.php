@@ -69,10 +69,9 @@
 									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								</ul>															
 								<div class="button">
-									<a href="contact.html" class="bizwheel-btn">Get a Quote</a>
+									<a href="contact.php" class="bizwheel-btn">Get a Quote</a>
 								</div>
 							</div>
 						</div>
@@ -112,20 +111,20 @@
 																<li><a href="about.php">About Us</a></li>
 																<li class="icon-active"><a href="#">Coaching</a>
 																	<ul class="sub-menu">
-																		<li><a href="blog.html">FBA Proficiency</a></li>
-																		<li><a href="blog-single.html">Social Media Class</a></li>
+																		<li><a href="service-single.php">FBA Proficiency</a></li>
+																		<li><a href="service-single.php">Social Media Class</a></li>
 																	</ul>
 																</li>
 
                                                                 <li class="icon-active"><a href="#">Automation</a>
 																	<ul class="sub-menu">
-																		<li><a href="blog.html">Complete</a></li>
-																		<li><a href="blog-single.html">Partial</a></li>
+																		<li><a href="service-single.php">Complete</a></li>
+																		<li><a href="service-single.php">Partial</a></li>
 																	</ul>
 																</li>
-                                                                <li><a href="contact.html">Testimonials</a></li>
-                                                                <li><a href="contact.html">Contact Us</a></li>
-																<li><a href="contact.html">FAQ</a></li>
+                                                                <li><a href="testimonials.php">Testimonials</a></li>
+                                                                <li><a href="contact.php">Contact Us</a></li>
+																<li><a href="faq.php">FAQ</a></li>
 															</ul>
 															<!--/ End Naviagiton -->
 														</div>
@@ -173,18 +172,16 @@
 						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 					</ul>
 				</div>
 				<div class="single-content">
 					<h4>Important Links</h4>   
 					<ul class="links">
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Our Services</a></li>
-						<li><a href="#">Portfolio</a></li>
-						<li><a href="#">Pricing Plan</a></li>
-						<li><a href="#">Blog & News</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="service-single.php">Our Services</a></li>
+						<li><a href="testimonials.php">Portfolio</a></li>
+						<li><a href="contact.php">Pricing Plan</a></li>
+						<li><a href="contact.php">Contact us</a></li>
 					</ul>
 				</div>	
 			</div>
