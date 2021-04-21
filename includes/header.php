@@ -12,7 +12,7 @@
 		<title>AutomateCity</title>
 		
 		<!-- Favicon -->
-		<!-- <link rel="icon" type="image/favicon.png" href="img/favicon.png"> -->
+		<link rel="icon" type="image/favicon.png" href="img/logo_icon.svg">
 		
 		<!-- Web Font -->
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/responsive.css">
 
-		<!-- <link rel="stylesheet" href="css/skins/skin-4.css"> -->
+		<!-- <link rel="stylesheet" href="css/skins/skin-3.css"> -->
 	
 		
 	</head>
@@ -85,14 +85,14 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="middle-inner">
-								<div class="row">
-									<div class="col-lg-2 col-md-3 col-12">
+								<div class="row py-0">
+									<div class="col-lg-2 col-md-3 col-12 py-0">
 										<!-- Logo -->
-										<div class="logo">
+										<div class="logo py-0">
 											<!-- Image Logo -->
-											<div class="img-logo">
-												<a href="index.php">
-													<img src="img/logo03.png" alt="#">
+											<div class="img-logo py-0">
+												<a href="index.php" class="py-0">
+													<img src="img/logo.svg" alt="#">
 												</a>
 											</div>
 										</div>								

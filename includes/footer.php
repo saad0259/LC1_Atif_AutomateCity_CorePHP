@@ -10,7 +10,7 @@
 								<div class="logo">
 									<div class="img-logo">
 										<a class="logo" href="index.php">
-											<img class="img-responsive" src="img/logo03_02.png" alt="logo">
+											<img class="img-responsive" src="img/logo_white.svg" alt="logo">
 										</a>
 									</div>
 								</div>
@@ -104,7 +104,7 @@
 						<div class="col-12">
 							<div class="copyright-content">
 								<!-- Copyright Text -->
-								<p>© Copyright <a href="#">AutomateCity</a>. Design &amp; Made with ❤ By <a target="_blank" href="#">Saad.S</a></p>
+								<p>© Copyright <a href="#">AutomateCity</a>. Design &amp; Made with ❤ By <a target="_blank" href="https://techforgery.com/">Tech Forgery</a></p>
 							</div>
 						</div>
 					</div>
