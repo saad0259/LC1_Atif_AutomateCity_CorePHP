@@ -41,6 +41,8 @@
     <!-- metarial icon css -->
     <link rel="stylesheet" href="/admin/vendors/material_icon/material-icons.css" />
 
+    <link href="/admin/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
+
     <!-- menu css  -->
     <link rel="stylesheet" href="/admin/css/metisMenu.css">
     <!-- style CSS -->

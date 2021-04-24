@@ -90,6 +90,8 @@
 <script src="/admin/vendors/chart_am/animated.js"></script>
 <script src="/admin/vendors/chart_am/kelly.js"></script>
 <script src="/admin/vendors/chart_am/chart-custom.js"></script>
+
+<script src="dist/js/bootstrap-colorpicker.js"></script>
 <!-- custom js -->
 <script src="/admin/js/dashboard_init.js"></script>
 <script src="/admin/js/custom.js"></script>
