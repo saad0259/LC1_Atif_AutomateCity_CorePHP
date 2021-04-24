@@ -104,7 +104,7 @@
 						<div class="col-12">
 							<div class="copyright-content">
 								<!-- Copyright Text -->
-								<p>© Copyright <a href="#">AutomateCity</a>. Design &amp; Made with ❤ By <a target="_blank" href="https://techforgery.com/">Tech Forgery</a></p>
+								<p>© Copyright <a href="#">AutomateCity</a>. Designed &amp; Made with ❤ By <a target="_blank" href="https://techforgery.com/">Tech Forgery</a></p>
 							</div>
 						</div>
 					</div>

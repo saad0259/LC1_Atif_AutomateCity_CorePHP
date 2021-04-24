@@ -1,3 +1,19 @@
+<!-- footer part -->
+<div class="footer_part">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer_iner text-center">
+                <p>© Copyright AutomateCity. Designed & Made with ❤ by <a href="http://techforgery.com/"> Tech Forgery</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- main content part end -->
+
+
 
 
 

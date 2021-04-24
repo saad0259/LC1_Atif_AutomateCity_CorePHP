@@ -63,7 +63,7 @@
     </div>
     <ul id="sidebar_menu">
         <li class="mm-active">
-          <a class="has-arrow"  href="/admin/#"  aria-expanded="false">
+          <a class="has-arrow"  href="#"  aria-expanded="false">
             <div class="icon_menu">
               <img src="/admin/img/menu-icon/dashboard.svg" alt="">
             </div>
@@ -76,7 +76,7 @@
           </ul>
         </li>
         <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/3.svg" alt="">
               </div>
@@ -87,7 +87,7 @@
             </ul>
         </li>
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/3.svg" alt="">
@@ -108,7 +108,7 @@
           </ul>
         </li>
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/4.svg" alt="">
@@ -148,7 +148,7 @@
         </li>
         
         <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/8.svg" alt="">
@@ -163,7 +163,7 @@
             </ul>
           </li>
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/8.svg" alt="">
             </div>
@@ -176,7 +176,7 @@
         </li>
 
         <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/9.svg" alt="">
               </div>
@@ -190,7 +190,7 @@
             </ul>
           </li>
           <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/10.svg" alt="">
               </div>
@@ -206,7 +206,7 @@
           </li>
 
           <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/11.svg" alt="">
               </div>
@@ -218,7 +218,7 @@
             </ul>
           </li>
           <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/12.svg" alt="">
               </div>
@@ -233,7 +233,7 @@
 
 
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/13.svg" alt="">
             </div>
@@ -250,7 +250,7 @@
         
 
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/14.svg" alt="">
             </div>
@@ -264,7 +264,7 @@
         
 
         <li class="">
-          <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+          <a   class="has-arrow" href="#" aria-expanded="false">
             <div class="icon_menu">
                 <img src="/admin/img/menu-icon/15.svg" alt="">
             </div>
@@ -276,7 +276,7 @@
           </ul>
         </li>
         <li class="">
-            <a   class="has-arrow" href="/admin/#" aria-expanded="false">
+            <a   class="has-arrow" href="#" aria-expanded="false">
               
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/16.svg" alt="">
@@ -321,7 +321,7 @@
                 <div class="header_right d-flex justify-content-between align-items-center">
                     <div class="header_notification_warp d-flex align-items-center">
                         <li>
-                            <a class="bell_notification_clicker nav-link-notify" href="/admin/#"> <img src="/admin/img/icon/bell.svg" alt="">
+                            <a class="bell_notification_clicker nav-link-notify" href="#"> <img src="/admin/img/icon/bell.svg" alt="">
                                 
                             </a>
                             <!-- Menu_NOtification_Wrap  -->
@@ -333,67 +333,67 @@
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/2.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/2.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>Cool Marketing </h5></a>
+                                        <a href="#"><h5>Cool Marketing </h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/4.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/4.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>Awesome packages</h5></a>
+                                        <a href="#"><h5>Awesome packages</h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/3.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/3.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>what a packages</h5></a>
+                                        <a href="#"><h5>what a packages</h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/2.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/2.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>Cool Marketing </h5></a>
+                                        <a href="#"><h5>Cool Marketing </h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/4.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/4.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>Awesome packages</h5></a>
+                                        <a href="#"><h5>Awesome packages</h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                                 <!-- single_notify  -->
                                 <div class="single_notify d-flex align-items-center">
                                     <div class="notify_thumb">
-                                        <a href="/admin/#"><img src="/admin/img/staf/3.png" alt=""></a>
+                                        <a href="#"><img src="/admin/img/staf/3.png" alt=""></a>
                                     </div>
                                     <div class="notify_content">
-                                        <a href="/admin/#"><h5>what a packages</h5></a>
+                                        <a href="#"><h5>what a packages</h5></a>
                                         <p>Lorem ipsum dolor sit amet</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="nofity_footer">
                                 <div class="submit_button text-center pt_20">
-                                    <a href="/admin/#" class="btn_1">See More</a>
+                                    <a href="#" class="btn_1">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -409,9 +409,9 @@
                                 <h5>Dr. Robar Smith</h5>
                             </div>
                             <div class="profile_info_details">
-                                <a href="/admin/#">My Profile </a>
-                                <a href="/admin/#">Settings</a>
-                                <a href="/admin/#">Log Out </a>
+                                <a href="#">My Profile </a>
+                                <a href="#">Settings</a>
+                                <a href="#">Log Out </a>
                             </div>
                         </div>
                     </div>
