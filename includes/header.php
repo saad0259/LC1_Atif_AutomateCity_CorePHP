@@ -29,7 +29,7 @@
 
 		<!--  Stylesheet -->  
 		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type='text/css' href="css/style.php">
 		<link rel="stylesheet" href="css/responsive.css">
 
 		<!-- <link rel="stylesheet" href="css/skins/skin-1.css"> -->

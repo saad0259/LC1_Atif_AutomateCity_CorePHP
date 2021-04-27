@@ -6,9 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Marketing</title>
+    <title><?php echo page_title; ?></title>
 
-    <link rel="icon" href="/admin/img/logo.png" type="image/png">
+		<link rel="icon" href="/img/logo_icon.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
     <!-- themefy CSS -->
@@ -58,7 +58,7 @@
  <!-- sidebar  -->
  <nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-between">
-        <a href="/admin//admin/index-2.html"><img src="/admin/img/logo.png" alt=""></a>
+        <a href="/admin"><img src="/img/logo.svg" alt=""></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="ti-close"></i>
         </div>
@@ -82,10 +82,10 @@
               <div class="icon_menu">
                   <img src="/admin/img/menu-icon/3.svg" alt="">
               </div>
-              <span>Desgin Props</span>
+              <span>Design Props</span>
             </a>
             <ul>
-              <li><a href="/admin//admin/editor.html">Change Theme</a></li>
+              <li><a href="/admin/themechange.php">Change Theme</a></li>
             </ul>
         </li>
         <li class="">

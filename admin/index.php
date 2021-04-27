@@ -1,5 +1,6 @@
 <?php
-
+    define('page_title',"Dashboard");
+    include('../includes/functions.php');
     include('includes/header.php');
 
 ?>

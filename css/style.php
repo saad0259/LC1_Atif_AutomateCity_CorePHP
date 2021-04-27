@@ -1,3 +1,25 @@
+<?php
+
+    header("Content-type: text/css; charset: UTF-8");
+
+    ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('../includes/functions.php');
+
+
+   
+    $primary1=getDataByProp('website-props','name',"'primarycolor1'");
+    $primary1=$primary1['value'];
+    $primary2=getDataByProp('website-props','name',"'primarycolor2'");
+    $primary2=$primary2['value'];
+    $secondary1=getDataByProp('website-props','name',"'secondarycolor1'");
+    $secondary1=$secondary1['value'];
+    
+    
+?>
+
 /*!
 Theme Name: Bizwheel
 Theme URI: https://themelamp.com/templates/bizwheel/
@@ -54,9 +76,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 :root{
 
-    --primary1:#2e2751;
+      /* --primary1:#2e2751 ;
     --primary2:#179E66;
-    --secondary1:#f3a712;
+    --secondary1:#f3a712;*/
+
+    --primary1:<?php print_r($primary1); ?> ;
+    --primary2:<?php print_r($primary2); ?>;
+    --secondary1:<?php print_r($secondary1); ?>;
+
    
 }
 
