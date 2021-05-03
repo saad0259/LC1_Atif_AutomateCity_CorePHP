@@ -12989,3 +12989,6 @@ a.pswp__share--download:hover {
 
 /*# sourceMappingURL=style.css.map */
 
+#itemList_wrapper, #itemList_wrapper .row{
+  width:100% !important;
+}

@@ -62,9 +62,9 @@
 							</div>
 							<!-- End Top Contact -->
 						</div>	
-						<div class="col-lg-4 col-12">
+						<!-- <div class="col-lg-4 col-12">
 							<div class="topbar-right">
-								<!-- Social Icons -->
+							
 								<ul class="social-icons">
 									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -74,7 +74,7 @@
 									<a href="contact.php" class="bizwheel-btn">Get a Quote</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -116,10 +116,12 @@
 																	</ul>
 																</li>
 
-                                                                <li class="icon-active"><a href="#">Automation</a>
+                                                                <li class="icon-active"><a href="#">Services</a>
 																	<ul class="sub-menu">
-																		<li><a href="service-single.php">Complete</a></li>
-																		<li><a href="service-single.php">Partial</a></li>
+																		<li><a href="service-single.php">Full Automation</a></li>
+																		<li><a href="service-single.php">Partial Automation</a></li>
+																		<li><a href="services.php">Other Services</a></li>
+
 																	</ul>
 																</li>
                                                                 <li><a href="testimonials.php">Testimonials</a></li>

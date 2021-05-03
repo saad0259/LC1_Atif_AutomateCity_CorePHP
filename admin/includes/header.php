@@ -7,47 +7,77 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title><?php echo page_title; ?></title>
+  	<link rel="icon" href="/img/logo_icon.svg">
 
-		<link rel="icon" href="/img/logo_icon.svg">
+
+    <?php 
+          if(basename($_SERVER['PHP_SELF']) == 'manage-services.php'){
+    ?>
+          <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+          <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.bootstrap4.min.css">
+
+  
+    <?php } 
+    elseif(basename($_SERVER['PHP_SELF']) == 'index.php'){
+    ?>
+    
+    
+        <!-- select2 CSS -->
+        <link rel="stylesheet" href="/admin/vendors/niceselect/css/nice-select.css" />
+
+        <!-- font awesome CSS -->
+        <link rel="stylesheet" href="/admin/vendors/font_awesome/css/all.min.css" />
+        <!-- <link rel="stylesheet" href="/admin/vendors/tagsinput/tagsinput.css" /> -->
+      
+        <!-- date picker -->
+        <link rel="stylesheet" href="/admin/vendors/datepicker/date-picker.css" />
+
+        <link rel="stylesheet" href="/admin/vendors/vectormap-home/vectormap-2.0.2.css" />
+      
+    <?php } 
+    elseif(basename($_SERVER['PHP_SELF']) == 'themechange.php'){
+    ?>
+       <link href="/admin/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
+
+    <?php } 
+    ?>
+
+
+
+
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <!-- themefy CSS -->
     <link rel="stylesheet" href="/admin/vendors/themefy_icon/themify-icons.css" />
-    <!-- select2 CSS -->
-    <link rel="stylesheet" href="/admin/vendors/niceselect/css/nice-select.css" />
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="/admin/vendors/owl_carousel/css/owl.carousel.css" />
-    <!-- gijgo css -->
-    <link rel="stylesheet" href="/admin/vendors/gijgo/gijgo.min.css" />
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="/admin/vendors/font_awesome/css/all.min.css" />
-    <link rel="stylesheet" href="/admin/vendors/tagsinput/tagsinput.css" />
-
-    <!-- date picker -->
-     <link rel="stylesheet" href="/admin/vendors/datepicker/date-picker.css" />
-
-     <link rel="stylesheet" href="/admin/vendors/vectormap-home/vectormap-2.0.2.css" />
-     
      <!-- scrollabe  -->
      <link rel="stylesheet" href="/admin/vendors/scroll/scrollable.css" />
-    <!-- datatable CSS -->
-    <link rel="stylesheet" href="/admin/vendors/datatable/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" href="/admin/vendors/datatable/css/responsive.dataTables.min.css" />
-    <link rel="stylesheet" href="/admin/vendors/datatable/css/buttons.dataTables.min.css" />
-    <!-- text editor css -->
-    <link rel="stylesheet" href="/admin/vendors/text_editor/summernote-bs4.css" />
-    <!-- morris css -->
-    <link rel="stylesheet" href="/admin/vendors/morris/morris.css">
-    <!-- metarial icon css -->
-    <link rel="stylesheet" href="/admin/vendors/material_icon/material-icons.css" />
-
-    <link href="/admin/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
-
     <!-- menu css  -->
     <link rel="stylesheet" href="/admin/css/metisMenu.css">
+
+
+
+
+
+
+
     <!-- style CSS -->
     <link rel="stylesheet" href="/admin/css/style.css" />
     <link rel="stylesheet" href="/admin/css/colors/default.css" id="colorSkinCSS">
+	
+
+
+
+
+    <script src="/admin/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/admin/js/popper.min.js"></script>
+    <!-- bootstarp js -->
+    <script src="/admin/js/bootstrap.min.js"></script>
+
+
+
+
 </head>
 <body class="crm_body_bg">
     
@@ -88,6 +118,17 @@
               <li><a href="/admin/themechange.php">Change Theme</a></li>
             </ul>
         </li>
+
+        <li class="">
+        <a href="/admin/manage-services.php" aria-expanded="false">
+              <div class="icon_menu">
+                  <img src="/admin/img/menu-icon/4.svg" alt="">
+              </div>
+              <span>Services</span>
+            </a>
+        </li>
+
+
         <li class="">
           <a   class="has-arrow" href="#" aria-expanded="false">
             

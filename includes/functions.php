@@ -1,4 +1,6 @@
 <?php 
+
+include("db-info.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -9,25 +11,42 @@ $errors   = array();
 function sayhelo(){
     echo "Hello from fucntion.php";
 }
-include("db-info.php");
+
 
 // $con=mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName); #parameters(hostname, username, password, database_name)
+// if ($con->connect_error) {
+//     array_push($errors, "Error: Database connection failed"); 
+//     die("Connection failed: " . $con->connect_error);
+//   }
+
 
 $conn = new PDO("mysql:host=$serverName;dbname=$dBName", $dBUsername, $dBPassword);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-// if ($conn->connect_error) {
-//     array_push($errors, "Error: Database connection failed"); 
-//     die("Connection failed: " . $conn->connect_error);
-//   }
 
-function stopRR(){ // Stop-Request-Reload: Stop POST request from reloading
-    echo'<script>
-            if ( window.history.replaceState ) {
-                window.history.replaceState( null, null, window.location.href );
-            }
-        </script>';
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    if(!empty($_POST['action']) && $_POST['action'] == 'listItem') {
+        itemList();
+    }
+    if(!empty($_POST['action']) && $_POST['action'] == 'addItem') {
+        addItem();
+    }
+    if(!empty($_POST['action']) && $_POST['action'] == 'getItem') {
+        getItem();
+    }
+    if(!empty($_POST['action']) && $_POST['action'] == 'updateItem') {
+        updateItem();
+    }
+    if(!empty($_POST['action']) && $_POST['action'] == 'itemDelete') {
+        deleteItem();
+    }
+        
+
 }
 
 
@@ -118,8 +137,75 @@ function check_mod(){
   
 
 
+/////////////////////////////////////////// CUSTOM FUNCTIONS ##########################################
 
 
+//May not work always
+function stopRR(){ // Stop-Request-Reload: Stop POST request from reloading
+    echo'<script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+        </script>';
+}
+
+
+	
+function insertRecord($table,$data){
+	
+    global $conn, $errors;
+
+    if (count($errors) == 0){
+
+        try {
+            
+            // prepare sql and bind parameters
+            $qry= "INSERT INTO ".$table." (" . implode(',' , array_keys($data)) . ") VALUES (";
+           
+            foreach($data as $key => $value)
+            {   
+                $qry.="?,";
+            }
+            $qry=rtrim($qry, ',');
+            $qry.=")";
+           
+
+            $stmt = $conn->prepare($qry);
+           
+            $c=1;
+            foreach($data as $key => $value)
+            {   
+                
+                if($stmt->bindValue($c, $value))
+                {
+                    $c++;
+                }
+                
+                
+
+            }
+           
+            $stmt->execute();
+            
+            
+          
+            echo "New records created successfully";
+          } catch(PDOException $e) {
+			array_push($errors, "Error: ".$e->getMessage()); 
+
+          }
+          $conn = null;
+
+
+
+
+
+
+    }
+
+
+
+}
 
 
 function insertRecord2($table, $data){
@@ -332,12 +418,28 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
 }
 
 
+function getDataByProp($table,$name,$val){
+    
 
+    try {
+        global $conn, $errors;
+        $sql = "SELECT * FROM `".$table."` WHERE ".$name."=" . $val;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+      
+        // set the resulting array to associative
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
+        $data=$stmt->fetch();
+        return $data;
 
-/////////////////////////////////////////// CUSTOM FUNCTIONS ##########################################
+      } catch(PDOException $e) {
+        array_push($errors, "Error: ".$e->getMessage()); 
+        return false;
+      }
+      $conn = null;
 
-
+}
 
 function getDataByProp2($table,$name,$val){
     global $con;
@@ -365,28 +467,7 @@ function getDataByProp2($table,$name,$val){
   
 }
 
-function getDataByProp($table,$name,$val){
-    
 
-    try {
-        global $conn;
-        $sql = "SELECT * FROM `".$table."` WHERE ".$name."=" . $val;
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-      
-        // set the resulting array to associative
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-        $data=$stmt->fetch();
-        return $data;
-
-      } catch(PDOException $e) {
-        // echo "Error: " . $e->getMessage();
-        return false;
-      }
-      $conn = null;
-
-}
 
 
 function getDataById2($id, $table){
@@ -428,7 +509,136 @@ function e($val){
     return mysqli_real_escape_string($con, trim($val));
 }
 
+
+/////////////////////////////////////////// DataTable FUNCTIONS: Functions related to DataTables ##########################################
+
+
+
+function itemList(){
+    global $conn;
+    $dbTable="services";
+    $sqlQuery = "SELECT * FROM `".$dbTable."` WHERE deleted_at IS NULL ";
+    if(!empty($_POST["search"]["value"])){
+        $sqlQuery .= 'AND (id LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR title LIKE "%'.$_POST["search"]["value"].'%" ';			
+        $sqlQuery .= ' OR description LIKE "%'.$_POST["search"]["value"].'%" ';
+        // $sqlQuery .= ' OR address LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR date LIKE "%'.$_POST["search"]["value"].'%")';			
+    }
+    
+    
+    if(!empty($_POST["order"])){
+        $sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
+    } else {
+        $sqlQuery .= 'ORDER BY id DESC ';
+    }
+    if($_POST["length"] != -1){
+        $sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+    }	
+
+    $result = $conn->prepare($sqlQuery);
+    // print_r($result);
+    $result->execute();
+
+    
+    $sqlQuery1 = "SELECT * FROM `".$dbTable."`  where deleted_at IS NULL";
+
+    $result1 = $conn->prepare($sqlQuery1);
+    $result1->execute();
+
+
+    $numRows = count($result1->fetchAll());
+    
+    $itemData = array();
+
+    $somedata = $result->setFetchMode(PDO::FETCH_ASSOC);
+    foreach(new RecursiveArrayIterator($result->fetchAll()) as $k=>$item) {
+        
+        $dataRows = array();			
+        $dataRows[] = $item['id'];
+        $dataRows[] = ucfirst($item['title']);
+        $dataRows[] = $item['description'];		
+        $dataRows[] = $item['date'];	
+        $dataRows[] = $item['purchases'];
+        $dataRows[] = $item['price'];					
+        $dataRows[] = '<button type="button" name="update" id="'.$item["id"].'" class="btn btn-warning btn-sm update">Update</button>';
+        $dataRows[] = '<button type="button" name="delete" id="'.$item["id"].'" class="btn btn-danger btn-sm delete" >Delete</button>';
+        $itemData[] = $dataRows;
+        
+    }
+
+    $output = array(
+        "draw"				=>	intval($_POST["draw"]),
+        "recordsTotal"  	=>  $numRows,
+        "recordsFiltered" 	=> 	$numRows,
+        "data"    			=> 	$itemData
+    );
+    echo json_encode($output);
+}
+function getItem(){
+    $dbTable="services";
+
+    if($_POST["id"]) {
+        
+        $row=getDataByProp($dbTable, 'id', $_POST["id"]);
+
+        
+        echo json_encode($row);
+    }
+}
+function updateItem(){
+    global $conn;
+    $dbTable="services";
+    
+    try {
+        if($_POST['id']) {
+            $updateQuery = "UPDATE ".$dbTable." 
+            SET title = '".$_POST["title"]."', description = '".$_POST["description"]."', date = '".$_POST["date"]."', purchases = '".$_POST["purchases"]."' , price = '".$_POST["price"]."'
+            WHERE id ='".$_POST["id"]."'";
+
+            $result = $conn->prepare($updateQuery);
+            $result->execute();
+            
+
+
+            // $isUpdated = mysqli_query($conn, $updateQuery);		
+        }	
+    } catch (PDOException $e) {
+        array_push($errors, "Error: ".$e->getMessage()); 
+
+    }
+
+    
+}
+function addItem(){
+    global $conn;
+    $dbTable="services";
+    unset($_POST['action']);
+    insertRecord($dbTable, $_POST);		
+
+}
+function deleteItem(){
+    global $conn;
+    $dbTable="services";
+
+
+
+    if($_POST["id"]) {
+
+        updatedb($dbTable, 'deleted_at', date("Y-m-d H:i:s"), 'id', $_POST['id']);
+        // $sqlDelete = "
+        // 	DELETE FROM ".$dbTable."
+        // 	WHERE id = '".$_POST["id"]."'";		
+        // mysqli_query($conn, $sqlDelete);
+        
+        
+    }
+}
+
+
+
 /////////////////////////////////////////// UNIQUE FUNCTIONS: Functions unique to this website ##########################################
+
 
 
 

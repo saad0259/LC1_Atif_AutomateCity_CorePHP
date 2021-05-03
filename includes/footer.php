@@ -4,7 +4,7 @@
 			<div class="footer-top">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 col-md-6 col-12">
+						<div class="col-lg-4 col-md-6 col-12">
 							<!-- Footer About -->		
 							<div class="single-widget footer-about widget">	
 								<div class="logo">
@@ -31,7 +31,7 @@
 							</div>		
 							<!--/ End Footer About -->		
 						</div>
-						<div class="col-lg-2 col-md-6 col-12">
+						<div class="col-lg-3 col-md-6 col-12">
 							<!-- Footer Links -->		
 							<div class="single-widget f-link widget">
 								<h3 class="widget-title">Company</h3>
@@ -44,32 +44,8 @@
 							</div>			
 							<!--/ End Footer Links -->			
 						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- Footer News -->
-							<div class="single-widget footer-news widget">	
-								<h3 class="widget-title">Testimonials</h3>
-								<!-- Single News -->
-								<div class="single-f-news">
-									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
-									<div class="content">
-										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 15, 2020</time></p>
-										<h4 class="title"><a href="service-single.php">They Provide you Best Creative Consulting Service</a></h4>
-									</div>
-								</div>
-								<!--/ End Single News -->
-								<!-- Single News -->
-								<div class="single-f-news">
-									<div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
-									<div class="content">
-										<p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 10, 2020</time></p>
-										<h4 class="title"><a href="service-single.php">They Provide you Best Creative Consulting Service</a></h4>
-									</div>
-								</div>
-								<!--/ End Single News -->
-							</div>			
-							<!--/ End Footer News -->			
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">	
+						
+						<div class="col-lg-4 col-md-6 col-12">	
 							<!-- Footer Contact -->		
 							<div class="single-widget footer_contact widget">	
 								<h3 class="widget-title">Contact</h3>
@@ -83,18 +59,7 @@
 							<!--/ End Footer Contact -->						
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
-							<!-- Footer Newsletter -->
-							<div class="footer-newsletter">
-								<form action="#" method="post" class="newsletter-area">
-									<input type="email" placeholder="Your email address">
-									<button type="submit">Sign Up</button>
-								</form>
-							</div>
-							<!--/ End Footer Newsletter -->
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<!-- Copyright -->
