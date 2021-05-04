@@ -1,7 +1,9 @@
 <?php
     define('page_title',"Manage");
+    include('../includes/functions.php');
 
  	include('includes/header.php');
+
 
 ?>
 
@@ -31,10 +33,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
-                                    <th>description</th>					
-                                    <th>date</th>
-                                    <th>purchases</th>
-                                    <th>price</th>					
+                                    <th>Description</th>					
+                                    <th>Date</th>
+                                    <th>Purchases</th>
+                                    <th>Price</th>
+                                    <th>Currency</th>
+                                    <th>Status</th>						
                                     <th></th>
                                     <th></th>					
                                 </tr>
@@ -51,15 +55,22 @@
 	</div>
     
 </div>
-    <div id="itemModal" class="modal fade" style="z-index:99999999">
+    <div id="itemModal" class="modal fade" >
         <div class="modal-dialog">
-            <form method="post" id="itemForm">
+            <form method="post" id="itemForm" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title"><i class="fa fa-plus"></i></h4>
                     </div>
                     <div class="modal-body">
+                        <div class="form-group" style="overflow-x: auto !important;overflow-y: auto !important;">
+                            <label class="btn btn-primary position-absolute mt-2 ml-2" style="position:absolute !important">
+                                Change Cover Image <input type="file" id="image" name='image' hidden>
+                            </label>
+                            <img id="visible_image" src="#">		
+                        </div>
+
                         <div class="form-group">
                             <label for="title" class="control-label">Title</label>
                             <input type="text" autofocus class="form-control" id="title" name="title" placeholder="Title" required>			
@@ -73,16 +84,45 @@
                         <div class="form-group">
                             <label for="date" class="control-label">date</label>							
                             <input type="date" class="form-control" id="date" name="date" >							
-                        </div>	   	
+                        </div>
+
+                        <div class="form-group">
+                            <label for="icon" class="control-label">Icon</label>							
+                            <input type="text" value="fa-line-chart" placeholder="Font Awesome icon e.g. fa-user" class="form-control" id="icon" name="icon" >							
+                        </div>
+
                         <div class="form-group">
                             <label for="purchases" class="control-label">Purchases</label>							
-                            <input type="number" class="form-control"  id="purchases" name="purchases" placeholder="Purchases" required>							
+                            <input type="number" min="0" class="form-control" value="0"  id="purchases" name="purchases" placeholder="Purchases" required>							
+                        </div>	
+
+                        <div class="form-group">
+                            <label for="currency" class="control-label">Curency</label>	
+                            <select class="form-control fh5co_contact_text_box" id="currency" name="currency">
+                            <option value="USD" checked>USD</option>
+                            <option value="PKR">PKR</option>
+                            </select>			
                         </div>	 
                         
                         <div class="form-group">
                             <label for="price" class="control-label">Price</label>							
-                            <input type="text" class="form-control" id="price" name="price" placeholder="Price">			
-                        </div>						
+                            <input type="number" min="0" class="form-control" id="price" name="price" placeholder="Price">			
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status" class="control-label">Status</label>	
+                            <select class="form-control fh5co_contact_text_box" id="status" name="status">
+                            <option value="live" checked>Live</option>
+                            <option value="hidden">Hidden</option>
+                            </select>			
+                        </div>	
+
+                        <div class="form-group">
+                            <label for="offered_by" class="control-label">Offered By</label>							
+                            <input type="text" class="form-control" id="offered_by" name="offered_by" placeholder="Offered By">			
+                        </div>
+                        	
+
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="id" id="id" />
@@ -106,4 +146,30 @@
 <?php
 include('includes/footer.php');
 ?>
+
+<script>
+    var dp = '/admin/uploads/images/455x515.png';
+
+    $('#visible_image').attr('src', dp);
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+            $('#visible_image').attr('src', e.target.result);
+            
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        }
+
+        $("#image").change(function() {
+        readURL(this);
+        });
+        
+    
+</script>
 

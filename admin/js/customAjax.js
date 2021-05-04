@@ -40,11 +40,16 @@ $(document).ready(function(){
 			success:function(data){
 				$('#itemModal').modal('show');
 				$('#id').val(data.id);
+				$("#image").attr("src",data.image);
 				$('#title').val(data.title);
 				$('#description').val(data.description);
 				$('#date').val(data.date);				
 				$('#purchases').val(data.purchases);
-				$('#price').val(data.price);	
+				$('#icon').val(data.icon);
+				$('#price').val(data.price);
+				$('#currency').val(data.currency);
+				$('#status').val(data.status);
+				$('#offered_by').val(data.offered_by);	
 				$('#action').val('updateItem');
 				$('#save').val('Save');
 			}
@@ -54,15 +59,22 @@ $(document).ready(function(){
 	
 		event.preventDefault();
 		$('#save').attr('disabled','disabled');
-		var formData = $(this).serialize();
+		var formData = new FormData(this);
+		
 		$.ajax({
 			url:"../includes/functions.php",
 			method:"POST",
 			data:formData,
+			processData: false,
+			cache:false,    
+			contentType: false,
+
+
 			success:function(data){				
 				$('#itemForm')[0].reset();
 				$('#itemModal').modal('hide');				
 				$('#save').attr('disabled', false);
+				$('#visible_image').attr('src', dp);
 				itemData.ajax.reload();
 			}
 		})

@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     if(!empty($_POST['action']) && $_POST['action'] == 'addItem') {
         addItem();
+
     }
     if(!empty($_POST['action']) && $_POST['action'] == 'getItem') {
         getItem();
@@ -155,7 +156,7 @@ function insertRecord($table,$data){
 	
     global $conn, $errors;
 
-    if (count($errors) == 0){
+    
 
         try {
             
@@ -196,12 +197,7 @@ function insertRecord($table,$data){
           }
           $conn = null;
 
-
-
-
-
-
-    }
+    
 
 
 
@@ -277,26 +273,30 @@ function updatedb2($table, $name, $val, $condition, $c_val)
 
 
 function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $max_height, $max_width, $must_have, $unique){
+    
+    global $errors;
+    
     $file_size_allowed= $max_filesize*1000000;
-    $file_uploaded_check=false;
     $file_exist_check=true;
  
     $ext_check=true;
     $size_check=true;
   
     
-    if (! file_exists($_FILES[$filename]["tmp_name"]))
+    if (!file_exists($_FILES[$filename]["tmp_name"]))
     {
 
         if($must_have)
-        return "No File selected";
+        {
+            array_push($errors, "No File selected"); 
+            return false;
+        }
+        
         else 
-        return 1;
+        return true;
     }
     else{
 
-
-        
         if($file_type=='pdf')
         {
             //$uploaddir = '../uploads/files/';
@@ -311,7 +311,6 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
         }
         elseif($file_type=='image')
         {
-            $fileinfo = @getimagesize($_FILES[$filename]["tmp_name"]);
             
             
             
@@ -325,16 +324,15 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
                 "JPEG"
             );
 
-            if ($width > $max_width || $height > $max_height){
-                return "file should be atmost ".$max_width."x".$max_height;
-
-            }
+            
 
 
 
         }
         else{
-            return 'Not a valid Filetype';
+            
+            array_push($errors, "Not a valid Filetype");
+            return false;
         }
 
 
@@ -342,15 +340,30 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
         
         if (! in_array($file_extension, $allowed_file_extension))
         {
-            return "Extension not identified : ".$file_extension;
+            
+            array_push($errors, "Extension not identified : ".$file_extension);
+            return false;
             
         }
         
         else{
+
+            $fileinfo = @getimagesize($_FILES[$filename]["tmp_name"]);
+            $width = $fileinfo[0];
+            $height = $fileinfo[1];
+
+            if ($width > $max_width || $height > $max_height){
+
+                array_push($errors, "file should be atmost ".$max_width."x".$max_height);
+                return false;
+
+            }
             
 
             if(($_FILES[$filename]["size"] > $file_size_allowed)){
-                return "file size should be less than ".$file_size_allowed." bytes";
+                
+                array_push($errors, "file size should be less than ".$file_size_allowed." bytes");
+                return false;
                 
             }
 
@@ -363,47 +376,36 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
     }
     
 
-
-
-
     if($size_check && $ext_check && $file_exist_check)
     {
 
         
         if(file_exists($uploaddir.$_FILES[$filename]['name']))
         {
-            if($unique)
-            return "This File Already Exists";
+            if($unique){
+                array_push($errors, "This File Already Exists");
+                return false;
+            }
+            
             else 
-            return 1;
+            return true;
             
         }
         else{
 
             $uploadfile = $uploaddir . basename($_FILES[$filename]['name']);
-
-            //echo "<p>";
-
-            
-          
-
-            
             
             if (move_uploaded_file($_FILES[$filename]["tmp_name"], $uploaddir . $newfilename)) {
-            return 1;
+            return true;
             
             }
             else {
                 
-            return "File Upload failed";
+            
+            array_push($errors, "File Upload failed");
+            return false;
             }
 
-
-           /*  echo "</p>";
-            echo '<pre>';
-            echo 'Here is some more debugging info:';
-            print_r($_FILES);
-             print "</pre>";*/
 
         }
 
@@ -522,6 +524,7 @@ function itemList(){
         $sqlQuery .= 'AND (id LIKE "%'.$_POST["search"]["value"].'%" ';
         $sqlQuery .= ' OR title LIKE "%'.$_POST["search"]["value"].'%" ';			
         $sqlQuery .= ' OR description LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR offered_by LIKE "%'.$_POST["search"]["value"].'%" ';
         // $sqlQuery .= ' OR address LIKE "%'.$_POST["search"]["value"].'%" ';
         $sqlQuery .= ' OR date LIKE "%'.$_POST["search"]["value"].'%")';			
     }
@@ -537,7 +540,6 @@ function itemList(){
     }	
 
     $result = $conn->prepare($sqlQuery);
-    // print_r($result);
     $result->execute();
 
     
@@ -557,10 +559,12 @@ function itemList(){
         $dataRows = array();			
         $dataRows[] = $item['id'];
         $dataRows[] = ucfirst($item['title']);
-        $dataRows[] = $item['description'];		
+        $dataRows[] = $item['description'];
         $dataRows[] = $item['date'];	
         $dataRows[] = $item['purchases'];
-        $dataRows[] = $item['price'];					
+        $dataRows[] = $item['price'];
+        $dataRows[] = $item['currency'];
+        $dataRows[] = $item['status'];					
         $dataRows[] = '<button type="button" name="update" id="'.$item["id"].'" class="btn btn-warning btn-sm update">Update</button>';
         $dataRows[] = '<button type="button" name="delete" id="'.$item["id"].'" class="btn btn-danger btn-sm delete" >Delete</button>';
         $itemData[] = $dataRows;
@@ -587,34 +591,80 @@ function getItem(){
     }
 }
 function updateItem(){
-    global $conn;
+    global $conn, $errors;
     $dbTable="services";
     
     try {
         if($_POST['id']) {
-            $updateQuery = "UPDATE ".$dbTable." 
-            SET title = '".$_POST["title"]."', description = '".$_POST["description"]."', date = '".$_POST["date"]."', purchases = '".$_POST["purchases"]."' , price = '".$_POST["price"]."'
-            WHERE id ='".$_POST["id"]."'";
+            
+            $updateQuery = "UPDATE `".$dbTable."` 
+            SET `title` = '".$_POST["title"]."',
+            `image` = '".$_FILES["image"]['tmp_name']."', `description` = '".$_POST["description"]."', `date` = '".$_POST["date"]."',`icon` = '".$_POST["icon"]."',
+            `purchases` = ".$_POST["purchases"].",`currency` = '".$_POST["currency"]."', `price` = ".$_POST["price"].", `status` = '".$_POST["status"]."',`offered_by` = '".$_POST["offered_by"]."'
+            WHERE `id` =".$_POST["id"]."";
 
             $result = $conn->prepare($updateQuery);
             $result->execute();
-            
-
-
-            // $isUpdated = mysqli_query($conn, $updateQuery);		
+            	
         }	
     } catch (PDOException $e) {
         array_push($errors, "Error: ".$e->getMessage()); 
+
 
     }
 
     
 }
 function addItem(){
-    global $conn;
+    global $conn,$errors;
+    
     $dbTable="services";
     unset($_POST['action']);
-    insertRecord($dbTable, $_POST);		
+    unset($_POST['id']);
+    
+
+    $defalut_post_image='455x515.png'; //default image if none is given
+    $filename='image'; // name of image input field
+
+    if (!file_exists($_FILES[$filename]["tmp_name"]))
+    {
+        $_POST[$filename]= $defalut_post_image;
+        $newfilename=$defalut_post_image;
+    }
+    else{
+
+        $newfilename=round(microtime(true));
+        $temp = explode(".", $_FILES[$filename]["name"]);
+        $newfilename = $newfilename . '.' . end($temp);
+
+        $_POST[$filename]= $newfilename;
+    }
+    
+    
+    print_r($_POST);
+
+
+
+                $file_response=upload_file($filename,$newfilename,'../admin/uploads/images/' ,'image',10, 1500, 1500, false, false);
+               
+                if($file_response)
+                { 
+                    if(insertRecord($dbTable,$_POST))
+                    {
+                        echo'Service Added Successfuly';
+                        
+                       
+                    }
+
+                    
+                }
+                else
+                {
+                    array_push($errors, "Could not add service"); 
+                    
+                    
+                }
+   	
 
 }
 function deleteItem(){
