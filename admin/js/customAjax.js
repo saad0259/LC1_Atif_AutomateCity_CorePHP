@@ -1,5 +1,8 @@
+
+
 $(document).ready(function(){	
 
+	
 	var itemData = $('#itemList').DataTable({
 		"lengthChange": false,
 		"processing":true,
@@ -20,8 +23,14 @@ $(document).ready(function(){
 		"pageLength": 10
 	});		
 	$('#addItem').click(function(){
+		var dp = 'uploads/images/455x515.png';
+
+    	$('#visible_image').attr('src', dp);
 		$('#itemModal').modal('show');
 		$('#itemForm')[0].reset();
+
+		document.getElementById('date').value = new Date().toDateInputValue();
+		
 		$('#action').val('addItem');
 		$('#save').val('Add');
 	});		
@@ -40,7 +49,7 @@ $(document).ready(function(){
 			success:function(data){
 				$('#itemModal').modal('show');
 				$('#id').val(data.id);
-				$("#image").attr("src",data.image);
+				$('#visible_image').attr('src', "/admin/uploads/images/"+data.image);
 				$('#title').val(data.title);
 				$('#description').val(data.description);
 				$('#date').val(data.date);				
@@ -52,6 +61,7 @@ $(document).ready(function(){
 				$('#offered_by').val(data.offered_by);	
 				$('#action').val('updateItem');
 				$('#save').val('Save');
+
 			}
 		})
 	});
@@ -60,7 +70,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		$('#save').attr('disabled','disabled');
 		var formData = new FormData(this);
-		
+		var dp = '/admin/uploads/images/455x515.png';
 		$.ajax({
 			url:"../includes/functions.php",
 			method:"POST",
@@ -96,4 +106,6 @@ $(document).ready(function(){
 			return false;
 		}
 	});	
+
+	
 });

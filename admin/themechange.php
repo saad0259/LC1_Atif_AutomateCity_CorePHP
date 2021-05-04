@@ -27,6 +27,8 @@
 
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+      global $errors;
+
       stopRR();
 
       if(isset($_POST['submit_colors']))
@@ -97,23 +99,7 @@
 
 
             <?php
-            
-            if(isset($errors))
-            {
-
-              if(count($errors)>0)
-              {
-                echo '<div class="alert alert-danger"> <ul>';
-                foreach($errors as $x => $error) {
-                  echo "<li> $error </li>";
-                 
-                }
-                echo "</ul></div>";
-              }
-
-            }
-            
-            
+            include('../includes/show-errors.php');
             ?>
 
 

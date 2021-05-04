@@ -128,7 +128,7 @@
             </a>
         </li>
 
-
+<!-- 
         <li class="">
           <a   class="has-arrow" href="#" aria-expanded="false">
             
@@ -334,8 +334,9 @@
               <li><a href="/admin//admin/forgot_pass.html">Forgot Password</a></li>
               <li><a href="/admin//admin/gallery.html">Gallery</a></li>
             </ul>
-          </li>
+        </li> -->
 
+     
       </ul>
 </nav>
  <!--/ sidebar  -->

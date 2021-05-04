@@ -12,7 +12,14 @@
     <div class="container-fluid p-0 sm_padding_15px">
 
 
-        <?php include('../includes/show-errors.php'); ?>
+        <div class="container-fluid" id="div-errors">
+
+            <?php
+                 include('../includes/show-errors.php');
+
+            ?>
+        </div>
+
 
 
 		<h2>Manage Your Services</h2>
@@ -73,17 +80,17 @@
 
                         <div class="form-group">
                             <label for="title" class="control-label">Title</label>
-                            <input type="text" autofocus class="form-control" id="title" name="title" placeholder="Title" required>			
+                            <input type="text" required class="form-control" id="title" name="title" placeholder="Title" required>			
                         </div>
 
                         <div class="form-group">
                             <label for="description" class="control-label">Description</label>							
-                            <textarea class="form-control" rows="5" id="description" name="description"></textarea>							
+                            <textarea class="form-control" required rows="5" id="description" name="description"></textarea>							
                         </div>
 
                         <div class="form-group">
                             <label for="date" class="control-label">date</label>							
-                            <input type="date" class="form-control" id="date" name="date" >							
+                            <input type="date" required class="form-control" id="date" name="date" >							
                         </div>
 
                         <div class="form-group">
@@ -91,10 +98,7 @@
                             <input type="text" value="fa-line-chart" placeholder="Font Awesome icon e.g. fa-user" class="form-control" id="icon" name="icon" >							
                         </div>
 
-                        <div class="form-group">
-                            <label for="purchases" class="control-label">Purchases</label>							
-                            <input type="number" min="0" class="form-control" value="0"  id="purchases" name="purchases" placeholder="Purchases" required>							
-                        </div>	
+                     
 
                         <div class="form-group">
                             <label for="currency" class="control-label">Curency</label>	
@@ -106,7 +110,7 @@
                         
                         <div class="form-group">
                             <label for="price" class="control-label">Price</label>							
-                            <input type="number" min="0" class="form-control" id="price" name="price" placeholder="Price">			
+                            <input type="number" min="0" required class="form-control" id="price" name="price" placeholder="Price">			
                         </div>
 
                         <div class="form-group">
@@ -119,7 +123,7 @@
 
                         <div class="form-group">
                             <label for="offered_by" class="control-label">Offered By</label>							
-                            <input type="text" class="form-control" id="offered_by" name="offered_by" placeholder="Offered By">			
+                            <input type="text" class="form-control" value="Automate City" id="offered_by" name="offered_by" placeholder="Offered By">			
                         </div>
                         	
 
@@ -148,7 +152,9 @@ include('includes/footer.php');
 ?>
 
 <script>
-    var dp = '/admin/uploads/images/455x515.png';
+
+
+    var dp = 'uploads/images/455x515.png';
 
     $('#visible_image').attr('src', dp);
 

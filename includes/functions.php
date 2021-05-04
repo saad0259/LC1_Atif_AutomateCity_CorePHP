@@ -1,5 +1,9 @@
 <?php 
 
+$timezone = "Asia/Karachi";
+date_default_timezone_set($timezone);
+
+
 include("db-info.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -29,7 +33,8 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+  
+ 
     if(!empty($_POST['action']) && $_POST['action'] == 'listItem') {
         itemList();
     }
@@ -241,6 +246,7 @@ function updatedb($table, $name, $val, $condition, $c_val){
         return true;
     } catch(PDOException $e) {
         // echo $sql . "<br>" . $e->getMessage();
+        array_push($errors, $sql . "<br>" . $e->getMessage()); 
         return false;
       }
 }
@@ -593,18 +599,53 @@ function getItem(){
 function updateItem(){
     global $conn, $errors;
     $dbTable="services";
-    
+    $filename='image';
+
+  
     try {
         if($_POST['id']) {
             
             $updateQuery = "UPDATE `".$dbTable."` 
-            SET `title` = '".$_POST["title"]."',
-            `image` = '".$_FILES["image"]['tmp_name']."', `description` = '".$_POST["description"]."', `date` = '".$_POST["date"]."',`icon` = '".$_POST["icon"]."',
-            `purchases` = ".$_POST["purchases"].",`currency` = '".$_POST["currency"]."', `price` = ".$_POST["price"].", `status` = '".$_POST["status"]."',`offered_by` = '".$_POST["offered_by"]."'
+            SET `title` = '".$_POST["title"]."', `description` = '".$_POST["description"]."', `date` = '".$_POST["date"]."',`icon` = '".$_POST["icon"]."',
+            `currency` = '".$_POST["currency"]."', `price` = ".$_POST["price"].", `status` = '".$_POST["status"]."',`offered_by` = '".$_POST["offered_by"]."'
             WHERE `id` =".$_POST["id"]."";
 
             $result = $conn->prepare($updateQuery);
             $result->execute();
+
+
+            if(file_exists($_FILES[$filename]["tmp_name"])){
+
+                $newfilename=round(microtime(true));
+                $temp = explode(".", $_FILES[$filename]["name"]);
+                $newfilename = $newfilename . '.' . end($temp);
+        
+                //$_POST[$filename]= $newfilename;
+        
+        
+                $file_response=upload_file($filename,$newfilename,'../admin/uploads/images/' ,'image',10, 1500, 1500, false, false);
+                       
+                        if($file_response)
+                        { 
+                            if(updatedb($dbTable,'image',$newfilename, 'id',$_POST["id"]))
+                            {
+                                echo'Image Edited Successfuly';
+                                
+                               
+                            }
+        
+                            
+                        }
+                        else
+                        {
+                            array_push($errors, "Could not add service"); 
+                            
+                            
+                        }
+            }
+            echo'Service Edited Successfuly';
+
+
             	
         }	
     } catch (PDOException $e) {
@@ -612,6 +653,11 @@ function updateItem(){
 
 
     }
+
+        
+    
+
+
 
     
 }
@@ -641,7 +687,7 @@ function addItem(){
     }
     
     
-    print_r($_POST);
+    //print_r($_POST);
 
 
 
@@ -671,9 +717,13 @@ function deleteItem(){
     global $conn;
     $dbTable="services";
 
+    global $timezone;
+
 
 
     if($_POST["id"]) {
+
+        
 
         updatedb($dbTable, 'deleted_at', date("Y-m-d H:i:s"), 'id', $_POST['id']);
         // $sqlDelete = "
