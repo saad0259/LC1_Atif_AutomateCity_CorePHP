@@ -425,6 +425,26 @@ function upload_file($filename,$newfilename, $dir,  $file_type,$max_filesize, $m
     
 }
 
+function getif($sql){
+
+    try {
+        global $conn, $errors;
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+      
+        // set the resulting array to associative
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        $data=$stmt->fetch();
+        return $result;
+
+      } catch(PDOException $e) {
+        array_push($errors, "Error: ".$e->getMessage()); 
+        return false;
+      }
+      $conn = null;
+}
 
 function getDataByProp($table,$name,$val){
     

@@ -2,6 +2,11 @@
 
 include('includes/functions.php');
 
+$data=getif("select * from `services` where `deleted_at` IS NULL");
+print_r($data);
+
+die;
+
 include('includes/header.php');
 
 ?>
