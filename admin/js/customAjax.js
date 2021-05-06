@@ -29,7 +29,6 @@ $(document).ready(function(){
 		$('#itemModal').modal('show');
 		$('#itemForm')[0].reset();
 
-		document.getElementById('date').value = new Date().toDateInputValue();
 		
 		$('#action').val('addItem');
 		$('#save').val('Add');

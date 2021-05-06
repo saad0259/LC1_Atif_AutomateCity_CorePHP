@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         getItem();
     }
     if(!empty($_POST['action']) && $_POST['action'] == 'updateItem') {
+       
         updateItem();
     }
     if(!empty($_POST['action']) && $_POST['action'] == 'itemDelete') {
@@ -434,10 +435,10 @@ function getif($sql){
         $stmt->execute();
       
         // set the resulting array to associative
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-        $data=$stmt->fetch();
-        return $result;
+        $data=$stmt->fetchAll();
+        return $data;
 
       } catch(PDOException $e) {
         array_push($errors, "Error: ".$e->getMessage()); 
@@ -524,9 +525,6 @@ function getDataById2($id, $table){
 }
 
 
-
-
-
 function strip_bad_chars( $input ){
     $output = preg_replace( "/[^a-zA-Z0-9_-]/", "", $input);
     return $output;
@@ -585,7 +583,7 @@ function itemList(){
         $dataRows = array();			
         $dataRows[] = $item['id'];
         $dataRows[] = ucfirst($item['title']);
-        $dataRows[] = $item['description'];
+        $dataRows[] = substr($item['description'],0,80)."...";
         $dataRows[] = $item['date'];	
         $dataRows[] = $item['purchases'];
         $dataRows[] = $item['price'];

@@ -2,10 +2,8 @@
 
 include('includes/functions.php');
 
-$data=getif("select * from `services` where `deleted_at` IS NULL");
-print_r($data);
+$data=getif("select * from `services` where `deleted_at` IS NULL AND `status`='live'");
 
-die;
 
 include('includes/header.php');
 
@@ -30,102 +28,40 @@ include('includes/header.php');
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-handshake-o"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-business.html">Business Strategy</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-business.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-html5"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-develop.html">Web Development</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-develop.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-cube"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-market.html">Market Research</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-market.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-coffee"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-design.html">Trend Design</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-design.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-bullhorn"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-advertise.html">Simply Adertisement</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-advertise.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<!-- Single Service -->
-						<div class="single-service">
-							<div class="service-head">
-								<img src="https://via.placeholder.com/555x410" alt="#">
-								<div class="icon-bg"><i class="fa fa-bullseye"></i></div>
-							</div>
-							<div class="service-content">
-								<h4><a href="service-marketing.html">Digital Marketing</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-marketing.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-							</div>
-						</div>
-						<!--/ End Single Service -->
-					</div>
+
+						<?php
+							foreach ($data as $key => $row) {
+								
+								
+								echo '<div class="col-lg-4 col-md-6 col-12">
+								<!-- Single Service -->
+								<div class="single-service">
+									<div class="service-head bg-danger ">
+										<img class=" w-100"  src="admin/uploads/images/'.$row['image'].'" alt="#">
+										<div class="icon-bg"><i class="fa '.$row['icon'].'"></i></div>
+										
+									</div>
+									<div class="service-content">
+										<h4><a href="service-single.php?service='.$row['id'].'">'.$row['title'].'</a></h4>
+										<p>'.substr($row['description'],0,130).'...</p>
+										<a class="btn" href="service-single.php?service='.$row['id'].'"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+									</div>
+								</div>
+								<!--/ End Single Service -->
+							</div>';
+
+
+							}
+						
+						
+						?>
+
 				</div>
 
-
-                <div class="row">
+			<!-- Pagination -->
+                <!-- <div class="row">
 					<div class="col-12">
-						<!-- Pagination -->
+						
 						<div class="pagination-plugin">
 							<ul class="pagination-list">
 								<li class="prev"><a href="#">Prev</a></li>
@@ -135,9 +71,9 @@ include('includes/header.php');
 								<li class="next"><a href="#">Next</a></li>
 							</ul>
 						</div>
-						<!--/ End Pagination -->
+						
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 	</section>
