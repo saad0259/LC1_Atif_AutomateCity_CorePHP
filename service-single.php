@@ -59,6 +59,7 @@ include('includes/header.php');
 											<li><i class="fa fa-user"></i><?php echo $row['offered_by'] ?></li>
 											<li><i class="fa fa-pencil"></i><?php echo $row['date'] ?></li>
 											<li><i class="fa fa-dollar"></i><?php echo $row['purchases'] ?> Purchases</li>
+											<li><i class="fa fa-dollar"></i><?php echo $row['purchases'] ?> Purchases</li>
 										</ul>
 										<h2 class="blog-title"><?php echo $row['title'] ?></h2>
 										<p>
@@ -93,8 +94,8 @@ include('includes/header.php');
 												</ul> -->
 
 
-                                                <div class="button my-4"><a href="#" class="bizwheel-btn "><i class="fa fa-dollar"></i> Buy</a></div>
-                                                <div class="button my-4"><a href="https://api.whatsapp.com/send/?phone=+923056558626&text&app_absent=0" class="bizwheel-btn theme-2 effect "><i class="fa fa-user"></i> Discuss More</a></div>
+                                                <div class="button my-4"><a href="#" class="bizwheel-btn "><i class="fa fa-dollar"></i> Buy for <?php echo $row['price']." ".$row['currency'] ?></a></div>
+                                                <div class="button my-4"><a href="https://api.whatsapp.com/send/?phone=+923056558626&text&app_absent=0&text=Hello there, i wanted to know more about <?php echo $row['title']?>" class="bizwheel-btn theme-2 effect "><i class="fa fa-user"></i> Discuss More</a></div>
 
 											</div>
 										</div>

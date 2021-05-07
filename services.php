@@ -20,9 +20,9 @@ include('includes/header.php');
 								<h1><span>Creative</span><b>Service We Provide</b></h1><h4>We provide quality service &amp; support..</h4>
 							</div>
 							<div class="section-bottom">
-								<div class="text-style-two">
+								<!-- <div class="text-style-two">
 									<p>Aliquam Sodales Justo Sit Amet Urna Auctor Scelerisquinterdum Leo Anet Tempus Enim Esent Egetis Hendrerit Vel Nibh Vitae Ornar Sem Velit Aliquam</p>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
