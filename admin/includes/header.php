@@ -94,19 +94,16 @@
         </div>
     </div>
     <ul id="sidebar_menu">
-        <li class="mm-active">
-          <a class="has-arrow"  href="#"  aria-expanded="false">
-            <div class="icon_menu">
-              <img src="/admin/img/menu-icon/dashboard.svg" alt="">
-            </div>
-            <span>Dashboard</span>
-          </a>
-          <ul>
-            <li><a class="active" href="/admin//admin/index-2.html">Marketing</a></li>
-            <li><a  href="/admin//admin/index_2.html">Default</a></li>
-            <li><a  href="/admin//admin/index_3.html">Dark Menu</a></li>
-          </ul>
+        
+        <li class="">
+            <a href="/admin/index.php" aria-expanded="false">
+              <div class="icon_menu">
+                  <img src="/admin/img/menu-icon/dashboard.svg" alt="">
+              </div>
+              <span>Dashboard</span>
+            </a>
         </li>
+
         <li class="">
             <a   class="has-arrow" href="#" aria-expanded="false">
               <div class="icon_menu">
